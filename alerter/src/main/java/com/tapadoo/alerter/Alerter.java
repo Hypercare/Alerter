@@ -565,6 +565,7 @@ public final class Alerter {
         if (getAlert() != null) {
             return getAlert().getAvatar();
         }
+        return null;
     }
 
     /**
