@@ -71,6 +71,7 @@
                     android:layout_width="195dp"
                     android:layout_height="wrap_content"
                     android:textAppearance="@style/AlertTextAppearance.Title"
+                    android:textColor="@color/grayishBrown"
                     android:visibility="gone"
                     tools:text="[Title]"
                     tools:visibility="visible" />
@@ -82,6 +83,7 @@
                     android:paddingBottom="@dimen/alerter_padding_small"
                     android:paddingTop="@dimen/alerter_padding_small"
                     android:textAppearance="@style/AlertTextAppearance.Text"
+                    android:textColor="@color/grayishBrown"
                     android:visibility="gone"
                     tools:text="[Message body]"
                     tools:visibility="visible" />
@@ -96,6 +98,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:textAppearance="@style/AlertTextAppearance.Text"
+                android:textColor="@color/grayishBrown"
                 android:visibility="gone"
                 tools:text="[Timestamp]"
                 tools:visibility="visible" />
