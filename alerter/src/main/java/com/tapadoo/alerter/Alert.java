@@ -536,7 +536,7 @@ public class Alert extends FrameLayout implements View.OnClickListener, Animatio
      * @param avatarId Drawable resource id of the icon to use in the Alert
      */
     public void setAvatar(@DrawableRes final int avatarId) {
-        ivIcon.setImageDrawable(AppCompatResources.getDrawable(getContext(), avatarId));
+        ivAvatar.setImageDrawable(AppCompatResources.getDrawable(getContext(), avatarId));
     }
 
     /**

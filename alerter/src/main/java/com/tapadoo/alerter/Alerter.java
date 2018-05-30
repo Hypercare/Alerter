@@ -556,6 +556,19 @@ public final class Alerter {
     }
 
     /**
+     * Retrieves the avatar part of the alerter
+     *
+     * @return The avatar part of the alerter
+     */
+    public Alerter getAvatarImageView() {
+        if (getAlert() != null) {
+            getAlert().getAvatar();
+        }
+
+        return this;
+    }
+
+    /**
      * Enable or Disable Icon Pulse Animations
      *
      * @param pulse True if the icon should pulse
