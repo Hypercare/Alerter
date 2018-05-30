@@ -57,7 +57,9 @@ public class Alert extends FrameLayout implements View.OnClickListener, Animatio
     private FrameLayout flBackground;
     private TextView tvTitle;
     private TextView tvText;
+    private TextView tvDetailText;
     private ImageView ivIcon;
+    private ImageView ivAvatar;
     private ViewGroup rlContainer;
     private ProgressBar pbProgress;
     private boolean dismissable = true;
@@ -122,7 +124,7 @@ public class Alert extends FrameLayout implements View.OnClickListener, Animatio
     }
 
     private void initView() {
-        inflate(getContext(), R.layout.alerter_alert_view, this);
+        inflate(getContext(), R.layout.alerter_message_view, this);
         setHapticFeedbackEnabled(true);
 
         ViewCompat.setTranslationZ(this, Integer.MAX_VALUE);
@@ -130,8 +132,10 @@ public class Alert extends FrameLayout implements View.OnClickListener, Animatio
         flBackground = findViewById(R.id.flAlertBackground);
         flClickShield = findViewById(R.id.flClickShield);
         ivIcon = findViewById(R.id.ivIcon);
+        ivAvatar = findViewById(R.id.ivAvatar);
         tvTitle = findViewById(R.id.tvTitle);
         tvText = findViewById(R.id.tvText);
+        tvDetailText = findViewById(R.id.tvTopRightText);
         rlContainer = findViewById(R.id.rlContainer);
         pbProgress = findViewById(R.id.pbProgress);
 
@@ -368,6 +372,15 @@ public class Alert extends FrameLayout implements View.OnClickListener, Animatio
     }
 
     /**
+     * Sets the Detail Text of the Alert
+     *
+     * @param detailId String resource id of the Alert title
+     */
+    public void setDetailTitle(@StringRes final int detailId) {
+        setDetailTitle(getContext().getString(detailId));
+    }
+
+    /**
      * Sets the Text of the Alert
      *
      * @param textId String resource id of the Alert text
@@ -421,6 +434,31 @@ public class Alert extends FrameLayout implements View.OnClickListener, Animatio
         if (!TextUtils.isEmpty(title)) {
             tvTitle.setVisibility(VISIBLE);
             tvTitle.setText(title);
+        }
+    }
+
+    /**
+     * Sets the Detail Title of the Alert
+     *
+     * @param detailTitle String object to be used as the Alert title
+     */
+    public void setDetailTitle(@NonNull final String detailTitle) {
+        if (!TextUtils.isEmpty(detailTitle)) {
+            tvDetailText.setVisibility(VISIBLE);
+            tvDetailText.setText(detailTitle);
+        }
+    }
+
+    /**
+     * Set the Detail Title's text appearance of the Detail Title
+     *
+     * @param textAppearance The style resource id
+     */
+    public void setDetailTitleAppearance(@StyleRes final int textAppearance) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            tvDetailText.setTextAppearance(textAppearance);
+        } else {
+            tvDetailText.setTextAppearance(tvDetailText.getContext(), textAppearance);
         }
     }
 
@@ -486,6 +524,46 @@ public class Alert extends FrameLayout implements View.OnClickListener, Animatio
 
     public ImageView getIcon() {
         return ivIcon;
+    }
+
+    public ImageView getAvatar() {
+        return ivAvatar;
+    }
+
+    /**
+     * Set the inline icon for the Avatar
+     *
+     * @param avatarId Drawable resource id of the icon to use in the Alert
+     */
+    public void setAvatar(@DrawableRes final int avatarId) {
+        ivIcon.setImageDrawable(AppCompatResources.getDrawable(getContext(), avatarId));
+    }
+
+    /**
+     * Set the inline avatar for the Alert
+     *
+     * @param bitmap Bitmap image of the icon to use in the Alert.
+     */
+    public void setAvatar(@NonNull final Bitmap bitmap) {
+        ivAvatar.setImageBitmap(bitmap);
+    }
+
+    /**
+     * Set the inline avatar for the Alert
+     *
+     * @param drawable Drawable image of the icon to use in the Alert.
+     */
+    public void setAvatar(@NonNull final Drawable drawable) {
+        ivAvatar.setImageDrawable(drawable);
+    }
+
+    /**
+     * Set whether to show the avatar in the alert or not
+     *
+     * @param showAvatar True to show the icon, false otherwise
+     */
+    public void showAvatar(final boolean showAvatar) {
+        ivAvatar.setVisibility(showAvatar ? View.VISIBLE : View.GONE);
     }
 
     /**

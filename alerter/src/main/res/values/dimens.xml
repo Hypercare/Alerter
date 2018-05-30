@@ -13,12 +13,16 @@
     <dimen name="alerter_progress_bar_size">2dp</dimen>
 
     <!--Alerts-->
-    <dimen name="alerter_alert_min_height">64dp</dimen>
+    <dimen name="alerter_alert_min_height">60dp</dimen>
     <dimen name="alerter_alert_max_height">84dp</dimen>
     <dimen name="alerter_alert_icn_size">38dp</dimen>
 
     <!--Text sizes-->
-    <dimen name="alerter_text_small">14sp</dimen>
-    <dimen name="alerter_text_medium">18sp</dimen>
+    <dimen name="alerter_text_small">13sp</dimen>
+    <dimen name="alerter_text_medium">17sp</dimen>
+
+    <!--Message View sizes -->
+    <dimen name="alerter_icon_image_size">25dp</dimen>
+    <dimen name="alerter_avatar_image_size">40dp</dimen>
 
 </resources>

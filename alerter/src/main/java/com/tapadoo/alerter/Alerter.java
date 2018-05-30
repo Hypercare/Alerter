@@ -168,6 +168,34 @@ public final class Alerter {
     /**
      * Set Title of the Alert
      *
+     * @param detailTitle Detail title as a String
+     * @return This Alerter
+     */
+    public Alerter setDetailTitle(final String detailTitle) {
+        if (getAlert() != null) {
+            getAlert().setDetailTitle(detailTitle);
+        }
+
+        return this;
+    }
+
+    /**
+     * Sets the title of the Alert
+     *
+     * @param detailTitleId Title String Resource
+     * @return This Alerter
+     */
+    public Alerter setDetailTitle(@StringRes final int detailTitleId) {
+        if (getAlert() != null) {
+            getAlert().setDetailTitle(detailTitleId);
+        }
+
+        return this;
+    }
+
+    /**
+     * Set Title of the Alert
+     *
      * @param title Title as a String
      * @return This Alerter
      */
@@ -202,6 +230,20 @@ public final class Alerter {
     public Alerter setTitleAppearance(@StyleRes final int textAppearance) {
         if (getAlert() != null) {
             getAlert().setTitleAppearance(textAppearance);
+        }
+
+        return this;
+    }
+
+    /**
+     * Set the Detail Title's text appearance
+     *
+     * @param textAppearance The style resource id
+     * @return This Alerter
+     */
+    public Alerter setDetailTitleAppearance(@StyleRes final int textAppearance) {
+        if (getAlert() != null) {
+            getAlert().setDetailTitleAppearance(textAppearance);
         }
 
         return this;
@@ -413,6 +455,48 @@ public final class Alerter {
     public Alerter setIconColorFilter(@ColorInt final int color, final PorterDuff.Mode mode) {
         if (getAlert() != null) {
             getAlert().setIconColorFilter(color, mode);
+        }
+
+        return this;
+    }
+
+    /**
+     * Set the Alert's Avatar
+     *
+     * @param avatarId The Drawable's Resource Idw
+     * @return This Alerter
+     */
+    public Alerter setAvatar(@DrawableRes final int avatarId) {
+        if (getAlert() != null) {
+            getAlert().setAvatar(avatarId);
+        }
+
+        return this;
+    }
+
+    /**
+     * Set the Alert's Avatar
+     *
+     * @param bitmap The Bitmap object to use for the icon.
+     * @return This Alerter
+     */
+    public Alerter setAvatar(@NonNull final Bitmap bitmap) {
+        if (getAlert() != null) {
+            getAlert().setAvatar(bitmap);
+        }
+
+        return this;
+    }
+
+    /**
+     * Set the Alert's Avatar
+     *
+     * @param drawable The Drawable to use for the icon.
+     * @return This Alerter
+     */
+    public Alerter setAvatar(@NonNull final Drawable drawable) {
+        if (getAlert() != null) {
+            getAlert().setAvatar(drawable);
         }
 
         return this;
