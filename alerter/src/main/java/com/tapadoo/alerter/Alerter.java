@@ -18,6 +18,7 @@ import android.support.v4.view.ViewCompat;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import java.lang.ref.WeakReference;
 
@@ -560,12 +561,10 @@ public final class Alerter {
      *
      * @return The avatar part of the alerter
      */
-    public Alerter getAvatarImageView() {
+    public ImageView getAvatarImageView() {
         if (getAlert() != null) {
-            getAlert().getAvatar();
+            return getAlert().getAvatar();
         }
-
-        return this;
     }
 
     /**
